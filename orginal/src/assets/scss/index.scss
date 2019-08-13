@@ -1,0 +1,304 @@
+@import './reset.scss';
+@import './var.scss';
+// @import '../font/iconfont.css';
+@import './element-variables.scss';
+@import "./mixin";
+
+body {
+  background: $bg;
+}
+
+* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.w {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-red {
+  color: $red !important;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-gray {
+  color: $gray-deep
+}
+
+.text-lighter {
+  color: $gray-deep-more
+}
+
+.text-content {
+  color: $content;
+}
+
+.text-small {
+  font-size: $font-size-small;
+}
+
+.text-normal {
+  font-size: $font-size-normal;
+}
+
+.text-big {
+  font-size: $font-size-big;
+}
+
+.text-big-more {
+  font-size: $font-size-big-more;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mult-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 42px;
+  padding: 0;
+}
+
+.mart-10 {
+  margin-top: 10px;
+}
+
+.mart-15 {
+  margin-top: 15px;
+}
+
+.marr-10 {
+  margin-right: 10px;
+}
+
+.border-b {
+  border: 1px solid $gray;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.flex-row {
+  display: flex;
+
+  &-eq {
+    flex: 1;
+  }
+}
+
+.btn-group {
+  .btn+.btn {
+    margin-left: 10px;
+  }
+}
+
+// 侧边栏公共样式
+.side-content {
+  float: right;
+  width: 360px;
+  .side-top-box-img {
+    width: 360px;
+    height: auto;
+  }
+}
+.side-box {
+  padding: 20px;
+  background: #fff;
+
+  &+& {
+    margin-top: 10px;
+  }
+
+  &.ad-box {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 20px;
+    border-bottom: 2px solid $border-color;
+  }
+
+  .title-msg {
+    display: inline-block;
+    line-height: 44px;
+    border-bottom: 2px solid $red;
+    margin-bottom: -2px;
+    color: $main;
+  }
+
+  .item+.item {
+    border-top: 1px solid $border-color;
+  }
+
+  .hot-title {
+    padding-left: 30px;
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    color: $main;
+    line-height: 36px;
+    font-size: 14px;
+
+    .hot-count {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+
+  .item {
+    padding: 10px 0;
+
+    .left {
+      margin-right: 10px;
+      width: 210px;
+    }
+
+    .item-title {
+      margin-bottom: 10px;
+      color: $main;
+      font-size: 14px;
+      line-height: 20px;
+      height: 40px;
+    }
+
+    .article-img {
+      width: 100px;
+      height: 70px;
+    }
+
+    .footer {
+      font-size: 14px;
+
+      .iconfont {
+        font-size: 12px;
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+.md-tag-group {
+  margin-top: 20px;
+
+  .md-tag {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-width: 0px;
+    max-width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: $gray;
+    border: none;
+    border-radius: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+  }
+}
+
+.detail-content {
+  position: relative;
+  padding-bottom: 30px;
+
+  * {
+    line-height: 24px;
+    font-size: 14px;
+    color: #2b323f;
+    max-width: 100% !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, strong {
+    font-weight: bold,
+  }
+
+  img {
+    padding: 10px 0;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+  }
+
+  video {
+    padding: 10px 0;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 100vw !important;
+  }
+}
+
+.ellipsis-more-1 {
+  @include ellipsis-more(25px, 1);
+
+  &-after {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(250, 249, 249, 1)), color-stop(50%, rgba(250, 249, 249, 1)));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(250, 249, 249, 1) 50%, rgba(250, 249, 249, 1));
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(250, 249, 249, 1) 50%, rgba(250, 249, 249, 1));
+    background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(250, 249, 249, 1) 50%, rgba(250, 249, 249, 1));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(250, 249, 249, 1) 50%, rgba(250, 249, 249, 1));
+  }
+}
+
+.ellipsis-more-2 {
+  @include ellipsis-more(50px, 2);
+}
+
+.ellipsis-more-3 {
+  @include ellipsis-more(75px, 3);
+}
+
